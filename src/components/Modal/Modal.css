@@ -1,0 +1,66 @@
+.Modal {
+  position: fixed;
+  z-index: 300;
+  background-color: #fff;
+  width: 25%;
+  border: 1px solid rgb(199, 194, 194);
+  border-radius: 5px;
+  padding: 1rem;
+  left: 35%;
+  top: 25%;
+  box-sizing: border-box;
+  text-align: center;
+  transition: all 0.3s ease-out;
+}
+
+.Modal form {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.Modal form label {
+  align-self: flex-start;
+  margin-bottom: 0.4rem;
+}
+
+.Modal form input {
+  width: 98%;
+  height: 1.9rem;
+  margin-bottom: 1.2rem;
+  border: 1px solid rgb(226, 223, 223);
+  border-radius: 3px;
+  padding-left: 0.5rem;
+}
+
+.Modal form input:focus {
+  outline: none;
+}
+
+.Modal form input::-webkit-input-placeholder {
+  color: rgba(180, 179, 179, 0.932);
+  font-size: 0.8rem;
+}
+
+.Modal form button {
+  background-color: rgb(45, 133, 235);
+  color: #fff;
+  border: 2px solid rgb(45, 133, 235);
+  border-radius: 5px;
+  padding: 0.6rem 1rem;
+  font-size: 1rem;
+  cursor: pointer;
+}
+
+.Modal form button:hover {
+  background-color: #fff;
+  border: 2px solid rgb(45, 133, 235);
+  color: rgb(45, 133, 235);
+}
+
+@media (max-width: 60rem) {
+  .Modal {
+    width: 40%;
+    left: 30%;
+  }
+}
