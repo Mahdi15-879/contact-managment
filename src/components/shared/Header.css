@@ -12,6 +12,10 @@
   margin: auto;
 }
 
+.Header a {
+  color: black;
+}
+
 .Header div h1 {
   font-weight: 400;
 }
