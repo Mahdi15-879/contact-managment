@@ -2,3 +2,9 @@
   width: 75%;
   margin: auto;
 }
+
+@media (max-width: 600px) {
+  .ContactList {
+    width: 95%;
+  }
+}

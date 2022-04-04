@@ -45,3 +45,9 @@
   border: 2px solid rgb(45, 133, 235);
   color: rgb(45, 133, 235);
 }
+
+@media (max-width: 600px) {
+  .Header div {
+    flex-direction: column;
+  }
+}

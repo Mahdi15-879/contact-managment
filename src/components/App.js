@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import React, { useState, useEffect } from "react";
 import { v4 as uuidv4 } from "uuid";
 import { Routes, Route, Navigate } from "react-router-dom";
 
@@ -10,8 +10,18 @@ import About from "./About";
 import "./App.css";
 
 function App() {
+  const LOCAL_STORAGE_KEY = "contacts";
   const [isShow, setIsShow] = useState(false);
   const [contacts, setContacts] = useState([]);
+
+  useEffect(() => {
+    const receiveContacts = JSON.parse(localStorage.getItem(LOCAL_STORAGE_KEY));
+    if (receiveContacts) setContacts(receiveContacts);
+  }, []);
+
+  useEffect(() => {
+    localStorage.setItem(LOCAL_STORAGE_KEY, JSON.stringify(contacts));
+  }, [contacts]);
 
   const addContactHandler = (contact) => {
     setContacts([...contacts, { id: uuidv4(), ...contact }]);
