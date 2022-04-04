@@ -1,0 +1,35 @@
+.Header {
+  width: 100%;
+  background-color: rgb(234, 237, 240);
+  border-bottom: 1px solid rgb(199, 194, 194);
+}
+
+.Header div {
+  display: flex;
+  align-items: center;
+  width: 75%;
+  margin: auto;
+}
+
+.Header div h1 {
+  font-weight: 400;
+}
+
+.Header div ul {
+  display: flex;
+  align-items: center;
+}
+
+.Header div ul li:not(:last-child) {
+  margin-right: 2rem;
+}
+
+.Header div ul li button {
+  background-color: rgb(45, 133, 235);
+  color: #fff;
+  border: none;
+  border-radius: 5px;
+  font-size: 1rem;
+  padding: 0.8rem 0.6rem;
+  cursor: pointer;
+}
