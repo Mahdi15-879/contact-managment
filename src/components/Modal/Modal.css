@@ -6,8 +6,8 @@
   border: 1px solid rgb(199, 194, 194);
   border-radius: 5px;
   padding: 1rem;
-  left: 35%;
-  top: 25%;
+  left: 37%;
+  top: 30%;
   box-sizing: border-box;
   text-align: center;
   transition: all 0.3s ease-out;
@@ -47,8 +47,8 @@
   color: #fff;
   border: 2px solid rgb(45, 133, 235);
   border-radius: 5px;
-  padding: 0.6rem 1rem;
-  font-size: 1rem;
+  padding: 0.5rem 1.3rem;
+  font-size: 1.1rem;
   cursor: pointer;
 }
 

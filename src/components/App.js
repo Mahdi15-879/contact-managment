@@ -1,4 +1,5 @@
-import React, { useState } from "react";
+import React, { useState, useEffect } from "react";
+import { v4 as uuidv4 } from "uuid";
 
 import Header from "./shared/Header";
 import Modal from "./Modal/Modal";
@@ -6,7 +7,32 @@ import Modal from "./Modal/Modal";
 import "./App.css";
 
 function App() {
+  const LOCAL_STORAGE_KEY = "contacts";
   const [isShow, setIsShow] = useState(false);
+  const [contacts, setContacts] = useState([]);
+
+  const addContactHandler = (contact) => {
+    setContacts([...contacts, { id: uuidv4(), ...contact }]);
+    setIsShow(false);
+  };
+
+  const removeContactHandler = (id) => {
+    const newContactList = contacts.filter((contact) => {
+      return contact.id !== id;
+    });
+    setContacts(newContactList);
+  };
+
+  // useEffect(() => {
+  //   const receiveContacts = JSON.parse(localStorage.getItem(LOCAL_STORAGE_KEY));
+  //   if (receiveContacts) {
+  //     setContacts(receiveContacts);
+  //   }
+  // }, []);
+
+  // useEffect(() => {
+  //   localStorage.setItem(LOCAL_STORAGE_KEY, JSON.stringify(contacts));
+  // }, [contacts]);
 
   const showHandler = () => {
     setIsShow(true);
@@ -19,7 +45,11 @@ function App() {
   return (
     <div className="App">
       <Header showHandler={showHandler} />
-      <Modal show={isShow} modalClose={modalCloseHandler} />
+      <Modal
+        show={isShow}
+        modalClose={modalCloseHandler}
+        addContactHandler={addContactHandler}
+      />
     </div>
   );
 }
