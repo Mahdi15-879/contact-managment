@@ -3,6 +3,7 @@ import { v4 as uuidv4 } from "uuid";
 
 import Header from "./shared/Header";
 import Modal from "./Modal/Modal";
+import ContactList from "./ContactList";
 
 import "./App.css";
 
@@ -15,24 +16,6 @@ function App() {
     setContacts([...contacts, { id: uuidv4(), ...contact }]);
     setIsShow(false);
   };
-
-  const removeContactHandler = (id) => {
-    const newContactList = contacts.filter((contact) => {
-      return contact.id !== id;
-    });
-    setContacts(newContactList);
-  };
-
-  // useEffect(() => {
-  //   const receiveContacts = JSON.parse(localStorage.getItem(LOCAL_STORAGE_KEY));
-  //   if (receiveContacts) {
-  //     setContacts(receiveContacts);
-  //   }
-  // }, []);
-
-  // useEffect(() => {
-  //   localStorage.setItem(LOCAL_STORAGE_KEY, JSON.stringify(contacts));
-  // }, [contacts]);
 
   const showHandler = () => {
     setIsShow(true);
@@ -50,6 +33,7 @@ function App() {
         modalClose={modalCloseHandler}
         addContactHandler={addContactHandler}
       />
+      <ContactList contacts={contacts} />
     </div>
   );
 }
